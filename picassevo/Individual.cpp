@@ -10,7 +10,8 @@
 
 Individual::Individual(unsigned width, unsigned height):
     m_width(width),
-    m_height(height)
+    m_height(height),
+    m_primitive_type(GL_TRIANGLES)
 {
     glGenBuffers(1, &m_vbo);
 }
@@ -30,8 +31,8 @@ void Individual::draw() const {
     glVertexPointer(2, GL_FLOAT, sizeof(m_genes[0]), (void*)offsetof(Gene, location));
     glColorPointer(4, GL_FLOAT, sizeof(m_genes[0]), (void*)offsetof(Gene, color));
     
-    glDrawArrays(GL_TRIANGLES, 0, (GLsizei)m_genes.size());
-    
+    glDrawArrays(m_primitive_type, 0, (GLsizei)m_genes.size());
+
     glDisableClientState(GL_VERTEX_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
     

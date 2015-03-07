@@ -17,12 +17,17 @@
 CircleIndividual::CircleIndividual(unsigned width, unsigned height):
     Individual(width, height)
 {
+    m_primitive_type = GL_QUADS;
+    
     m_pixels.clear();
     m_pixels.resize(get_size() * 4);
     
     for (int i = 0; i < m_pixels.size(); ++i) {
         // black with full alpha
-        m_pixels[i] = i % 4 != 3 ? 0 : 255;
+        //m_pixels[i] = i % 4 != 3 ? 0 : 255;
+        
+        // white
+        m_pixels[i] = 255;
     }
 }
 
@@ -52,6 +57,53 @@ void CircleIndividual::mutate()
 
 void CircleIndividual::generate_mutation_genes()
 {
+    //*
+    // generate a new rectangle
+    auto randx = std::uniform_real_distribution<float>(0, m_width);
+    auto randy = std::uniform_real_distribution<float>(0, m_height);
+    auto randr = std::lognormal_distribution<float>(1, 1.0);
+    auto randc = std::uniform_real_distribution<float>(0, 1);
+    
+    Gene::Color color = {
+        randc(randomness), randc(randomness), randc(randomness), 1.0};
+    
+    float x = randx(randomness);
+    float y = randy(randomness);
+    float rx = randr(randomness);
+    float ry = randr(randomness);
+    
+    m_genes.clear();
+    m_genes.reserve(6);
+    
+    m_genes.push_back({x - rx, y - ry, color });
+    m_genes.push_back({x - rx, y + ry, color });
+    m_genes.push_back({x + rx, y + ry, color });
+    m_genes.push_back({x + rx, y - ry, color });
+    //*/
+    
+    /*
+    // generate a new triangle
+    auto randx = std::uniform_real_distribution<float>(0, m_width);
+    auto randy = std::uniform_real_distribution<float>(0, m_height);
+    auto randoffset = std::uniform_real_distribution<float>(-25, 25);
+    auto randc = std::uniform_real_distribution<float>(0, 1);
+    
+    Gene::Color triangle_color = {
+        randc(randomness), randc(randomness), randc(randomness), 1.0};
+    
+    float x = randx(randomness);
+    float y = randy(randomness);
+    
+    m_genes.clear();
+    m_genes.reserve(3);
+    for (int i = 0; i < 3; ++i) {
+        m_genes.push_back({
+            {x + randoffset(randomness), y + randoffset(randomness)}, triangle_color
+        });
+    }
+    //*/
+    
+    /*
     // generate a new circle
     auto randx = std::uniform_real_distribution<float>(0, m_width);
     auto randy = std::uniform_real_distribution<float>(0, m_height);
@@ -80,6 +132,7 @@ void CircleIndividual::generate_mutation_genes()
         m_genes.push_back({x + r * std::cosf(o1), y + r * std::sinf(o1), color});
         m_genes.push_back({x + r * std::cosf(o2), y + r * std::sinf(o2), color});
     }
+    //*/
 }
 
 

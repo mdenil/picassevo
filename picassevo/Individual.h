@@ -42,6 +42,8 @@ protected:
     unsigned m_width, m_height;
     std::vector<unsigned char> m_pixels;
     
+    GLenum m_primitive_type;
+    
     GLuint m_vbo;
 };
 

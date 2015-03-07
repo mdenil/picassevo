@@ -49,6 +49,7 @@
 		6C450FA81AAA3FE70038784D /* Individual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Individual.h; sourceTree = "<group>"; };
 		6C450FAA1AAA449C0038784D /* CircleIndividual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircleIndividual.cpp; sourceTree = "<group>"; };
 		6C450FAB1AAA449C0038784D /* CircleIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleIndividual.h; sourceTree = "<group>"; };
+		6C450FAD1AAB7F120038784D /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		6CFEF3301AA526E00067BEF2 /* picassevo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = picassevo; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFEF3331AA526E00067BEF2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6CFEF33A1AA5277E0067BEF2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -114,6 +115,7 @@
 				6C450FA21AA916290038784D /* Random.h */,
 				6C450FA41AA91BDA0038784D /* Evolver.cpp */,
 				6C450FA51AA91BDA0038784D /* Evolver.h */,
+				6C450FAD1AAB7F120038784D /* TODO.txt */,
 			);
 			path = picassevo;
 			sourceTree = "<group>";

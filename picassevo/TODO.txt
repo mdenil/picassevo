@@ -1,0 +1,14 @@
+Configurable options:
+
+- shape type (circle/triangle/rectangle/etc)
+    - some parameters of the shapes (?)
+- background color
+- image file
+- save path / frequency
+- target number of shapes
+
+Infrastructure:
+
+- Render into textures
+- separate texture ownership from individuals
+- double buffer textures between incumbant and challenger

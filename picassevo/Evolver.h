@@ -33,6 +33,7 @@ private:
     int m_step_count;
     int m_rejection_count;
     int m_n_generations;
+    int m_n_success;
     std::chrono::time_point<std::chrono::system_clock> m_last_best_time;
 };
 
