@@ -11,17 +11,15 @@
 
 #include "Evolver.h"
 
-Evolver::Evolver(Individual const& seed, Painter const* painter, FitnessFunction const* fitness):
+Evolver::Evolver(Individual const& seed, FitnessFunction* fitness):
     m_best(seed.clone()),
-    m_painter(painter),
     m_fitness_function(fitness),
     m_step_count(0),
     m_rejection_count(0),
     m_n_generations(0),
     m_last_best_time(std::chrono::system_clock::now())
 {
-    m_best_fitness = m_fitness_function->evaluate(*m_best, m_painter);
-    
+    m_best_fitness = m_fitness_function->evaluate(*m_best);
 }
 
 
@@ -29,10 +27,10 @@ void Evolver::run()
 {
     auto candidate = m_best->clone();
     candidate->mutate();
-    float candidate_fitness = m_fitness_function->evaluate(*candidate, m_painter);
+    float candidate_fitness = m_fitness_function->evaluate(*candidate);
     
     m_step_count += 1;
-        
+    
     if (candidate_fitness < m_best_fitness) {
         std::swap(m_best, candidate);
         std::swap(m_best_fitness, candidate_fitness);

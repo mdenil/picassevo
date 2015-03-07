@@ -13,17 +13,18 @@
 #include <vector>
 
 #include "Individual.h"
-#include "Painter.h"
 
 class FitnessFunction
 {
 public:
     FitnessFunction(std::string const& target_image_name);
     
-    float evaluate(Individual const& individual, Painter const* painter) const;
+    float evaluate(Individual const& individual) const;
     
     unsigned int get_width() const { return m_width; }
     unsigned int get_height() const { return m_height; }
+    
+    std::vector<unsigned char> const& get_target() const { return m_target_image_data; }
     
 private:
     std::vector<unsigned char> m_target_image_data;

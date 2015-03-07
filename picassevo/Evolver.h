@@ -13,13 +13,12 @@
 #include <chrono>
 
 #include "Individual.h"
-#include "Painter.h"
 #include "FitnessFunction.h"
 
 class Evolver
 {
 public:
-    Evolver(Individual const& seed, Painter const* painter, FitnessFunction const* fitness);
+    Evolver(Individual const& seed, FitnessFunction* fitness);
     
     void run();
     
@@ -29,8 +28,7 @@ private:
     std::unique_ptr<Individual> m_best;
     float m_best_fitness;
     
-    Painter const* m_painter;
-    FitnessFunction const* m_fitness_function;
+    FitnessFunction* m_fitness_function;
     
     int m_step_count;
     int m_rejection_count;
