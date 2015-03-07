@@ -50,8 +50,8 @@ int main(int argc, char** argv)
     
     //FitnessFunction fitness_function("data/lisa.png");
     //FitnessFunction fitness_function("data/starry-night.png");
-    FitnessFunction fitness_function("data/bridge.png");
-    //FitnessFunction fitness_function("data/bbd1.png");
+    //FitnessFunction fitness_function("data/bridge.png");
+    FitnessFunction fitness_function("data/explosion.png");
     
     image_width = fitness_function.get_width();
     image_height = fitness_function.get_height();

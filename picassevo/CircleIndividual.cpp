@@ -31,6 +31,7 @@ void CircleIndividual::add_circle()
     
     //float c = randc(randomness);
     Gene::Color color = {
+        //c, c, c, 1.0};
         randc(randomness), randc(randomness), randc(randomness), 1.0};
     
     float x = randx(randomness);
