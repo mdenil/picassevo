@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6C450F921AA8EA2E0038784D /* lodepng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450F901AA8EA2E0038784D /* lodepng.cpp */; };
 		6C450F971AA904E50038784D /* OriginalIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450F951AA904E50038784D /* OriginalIndividual.cpp */; };
-		6C450F9A1AA905020038784D /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450F981AA905020038784D /* Painter.cpp */; };
 		6C450F9D1AA908500038784D /* Gene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450F9B1AA908500038784D /* Gene.cpp */; };
 		6C450FA01AA90A900038784D /* FitnessFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450F9E1AA90A900038784D /* FitnessFunction.cpp */; };
 		6C450FA31AA916290038784D /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FA11AA916290038784D /* Random.cpp */; };
@@ -38,8 +37,6 @@
 		6C450F911AA8EA2E0038784D /* lodepng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lodepng.h; path = lodepng/lodepng.h; sourceTree = "<group>"; };
 		6C450F951AA904E50038784D /* OriginalIndividual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OriginalIndividual.cpp; sourceTree = "<group>"; };
 		6C450F961AA904E50038784D /* OriginalIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriginalIndividual.h; sourceTree = "<group>"; };
-		6C450F981AA905020038784D /* Painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Painter.cpp; sourceTree = "<group>"; };
-		6C450F991AA905020038784D /* Painter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Painter.h; sourceTree = "<group>"; };
 		6C450F9B1AA908500038784D /* Gene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gene.cpp; sourceTree = "<group>"; };
 		6C450F9C1AA908500038784D /* Gene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gene.h; sourceTree = "<group>"; };
 		6C450F9E1AA90A900038784D /* FitnessFunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FitnessFunction.cpp; sourceTree = "<group>"; };
@@ -109,8 +106,6 @@
 				6C450F961AA904E50038784D /* OriginalIndividual.h */,
 				6C450FAA1AAA449C0038784D /* CircleIndividual.cpp */,
 				6C450FAB1AAA449C0038784D /* CircleIndividual.h */,
-				6C450F981AA905020038784D /* Painter.cpp */,
-				6C450F991AA905020038784D /* Painter.h */,
 				6C450F9B1AA908500038784D /* Gene.cpp */,
 				6C450F9C1AA908500038784D /* Gene.h */,
 				6C450F9E1AA90A900038784D /* FitnessFunction.cpp */,
@@ -187,7 +182,6 @@
 				6C450FA31AA916290038784D /* Random.cpp in Sources */,
 				6C450FA01AA90A900038784D /* FitnessFunction.cpp in Sources */,
 				6CFEF3341AA526E00067BEF2 /* main.cpp in Sources */,
-				6C450F9A1AA905020038784D /* Painter.cpp in Sources */,
 				6C450FA61AA91BDA0038784D /* Evolver.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
