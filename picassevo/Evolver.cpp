@@ -12,7 +12,7 @@
 
 #include "Evolver.h"
 
-Evolver::Evolver(Individual const& seed, FitnessFunction* fitness):
+Evolver::Evolver(AbstractIndividual const& seed, FitnessFunction* fitness):
     m_best(seed.clone()),
     m_fitness_function(fitness),
     m_step_count(0),

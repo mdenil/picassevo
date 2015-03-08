@@ -6,19 +6,26 @@
 //  Copyright (c) 2015 Misha Denil. All rights reserved.
 //
 
-#include "Individual.h"
+#include "AbstractIndividual.h"
 
-Individual::Individual(unsigned width, unsigned height):
+AbstractIndividual::AbstractIndividual(unsigned width, unsigned height):
     m_width(width),
     m_height(height),
     m_primitive_type(GL_TRIANGLES)
 {
     glGenBuffers(1, &m_vbo);
+    
+    m_pixels.resize(get_size() * 4);
+    for (int i = 0; i < m_pixels.size(); ++i) {
+        // black with full alpha
+        //m_pixels[i] = i % 4 != 3 ? 0 : 255;
+        
+        // white
+        m_pixels[i] = 255;
+    }
 }
 
-void Individual::draw() const {
-    //glClear(GL_COLOR_BUFFER_BIT);
-    
+void AbstractIndividual::draw() const {
     glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
     glBufferData(GL_ARRAY_BUFFER,
                  m_genes.size() * sizeof(m_genes[0]),
@@ -37,5 +44,4 @@ void Individual::draw() const {
     glDisableClientState(GL_COLOR_ARRAY);
     
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-
 }

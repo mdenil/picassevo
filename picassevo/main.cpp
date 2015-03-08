@@ -15,8 +15,9 @@
 #include <cassert>
 #include <chrono>
 
-#include "OriginalIndividual.h"
-#include "CircleIndividual.h"
+#include "Individual/CircleIndividual.h"
+#include "Individual/RectangleIndividual.h"
+#include "Individual/TriangleIndividual.h"
 #include "FitnessFunction.h"
 #include "Evolver.h"
 #include "Random.h"
@@ -28,80 +29,9 @@ struct Point {
 };
 
 
-std::vector<unsigned char> image;
-unsigned image_width, image_height;
-
 Evolver* g_evolution;
+unsigned g_image_width, g_image_height;
 std::chrono::time_point<std::chrono::system_clock> g_last_update_time;
-
-
-/*! GLUT display callback function */
-void display(void);
-/*! GLUT window reshape callback function */
-void reshape(int, int);
-
-void run_evolution();
-
-int main(int argc, char** argv)
-{
-    glutInit(&argc, argv);
-    
-    //FitnessFunction fitness_function("data/lisa.png");
-    //FitnessFunction fitness_function("data/starry-night.png");
-    //FitnessFunction fitness_function("data/bridge.png");
-    //FitnessFunction fitness_function("data/explosion.png");
-    //FitnessFunction fitness_function("data/squares.png");
-    //FitnessFunction fitness_function("data/circles.png");
-    //FitnessFunction fitness_function("data/circles.png");
-    FitnessFunction fitness_function("data/summer.png");
-    
-    image_width = fitness_function.get_width();
-    image_height = fitness_function.get_height();
-    
-    image = fitness_function.get_target();
-    
-    glutInitWindowSize(image_width, image_height);
-    
-
-    glutInitDisplayMode(GLUT_RGBA | GLUT_ALPHA | GLUT_DOUBLE);
-    
-    /* create the window (and call it Lab 1) */
-    glutCreateWindow("Picassevo");
-    
-    /* set the glut display callback function
-     this is the function GLUT will call every time
-     the window needs to be drawn
-     */
-    glutDisplayFunc(display);
-    
-    /* set the glut reshape callback function
-     this is the function GLUT will call whenever
-     the window is resized, including when it is
-     first created
-     */
-    glutReshapeFunc(reshape);
-    
-    /* set the default background color to black */
-    glClearColor(0,0,0,1);
-
-    glutIdleFunc(run_evolution);
-
-    
-    CircleIndividual individual(fitness_function.get_width(), fitness_function.get_height());
-    Evolver evolution(individual, &fitness_function);
-    
-    g_evolution = &evolution;
-    g_last_update_time = std::chrono::system_clock::now();
-
-    
-    
-    /* enter the main event loop so that GLUT can process
-     all of the window event messages
-     */
-    glutMainLoop();
-    
-    return 0;
-}
 
 void run_evolution()
 {
@@ -115,32 +45,23 @@ void run_evolution()
     }
 }
 
-
-
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT);
-    
     g_evolution->get_best_individual().draw();
-    
     g_last_update_time = std::chrono::system_clock::now();
-    
     glutSwapBuffers();
 }
 
 
-/*! glut reshape callback function.  GLUT calls this function whenever
- the window is resized, including the first time it is created.
- You can use variables to keep track the current window size.
- */
 void reshape(int width, int height)
 {
-    glutReshapeWindow(image_width, image_height);
+    glutReshapeWindow(g_image_width, g_image_height);
     
-    glViewport(0, 0, image_width, image_height);
+    glViewport(0, 0, g_image_width, g_image_height);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0, image_width, image_height, 0, -1, 1);
+    glOrtho(0, g_image_width, g_image_height, 0, -1, 1);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     
@@ -148,4 +69,61 @@ void reshape(int width, int height)
     glDisable(GL_DEPTH_TEST);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+}
+
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+    
+    //std::string target_file_name = "data/isa.png";
+    std::string target_file_name = "data/starry-night.png";
+    //std::string target_file_name = "data/bridge.png";
+    //std::string target_file_name = "data/explosion.png";
+    //std::string target_file_name = "data/squares.png";
+    //std::string target_file_name = "data/circles.png";
+    //std::string target_file_name = "data/summer.png";
+    
+    FitnessFunction fitness_function(target_file_name);
+    
+    g_image_width = fitness_function.get_width();
+    g_image_height = fitness_function.get_height();
+    
+    glutInitWindowSize(g_image_width, g_image_height);
+    glutInitDisplayMode(GLUT_RGBA | GLUT_ALPHA | GLUT_DOUBLE);
+    glutCreateWindow("Picassevo");
+    glutDisplayFunc(display);
+    glutReshapeFunc(reshape);
+    glutIdleFunc(run_evolution);
+    
+    glClearColor(0,0,0,1);
+    
+    std::string individual_type = "circle";
+    std::unique_ptr<AbstractIndividual> individual;
+    
+    if (individual_type == "circle") {
+        individual = std::make_unique<CircleIndividual>(fitness_function.get_width(),
+                                                        fitness_function.get_height());
+    }
+    else if (individual_type == "rectangle") {
+        individual = std::make_unique<RectangleIndividual>(fitness_function.get_width(),
+                                                           fitness_function.get_height());
+    }
+    else if (individual_type == "triangle") {
+        individual = std::make_unique<TriangleIndividual>(fitness_function.get_width(),
+                                                          fitness_function.get_height());
+    }
+    else {
+        std::cerr << "This is not an individual_type: '" << individual_type << "'" << std::endl;
+        return 1;
+    }
+    
+    Evolver evolution(*individual, &fitness_function);
+    
+    g_evolution = &evolution;
+    g_last_update_time = std::chrono::system_clock::now();
+    
+    glutMainLoop();
+    
+    return 0;
 }

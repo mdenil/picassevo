@@ -12,14 +12,14 @@
 #include <string>
 #include <vector>
 
-#include "Individual.h"
+#include "AbstractIndividual.h"
 
 class FitnessFunction
 {
 public:
     FitnessFunction(std::string const& target_image_name);
     
-    float evaluate(Individual const& individual) const;
+    float evaluate(AbstractIndividual const& individual) const;
     
     unsigned int get_width() const { return m_width; }
     unsigned int get_height() const { return m_height; }

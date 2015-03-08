@@ -38,7 +38,7 @@ FitnessFunction::FitnessFunction(std::string const& target_image_name)
     //lodepng::encode("test.png", m_target_image_data, m_width, m_height);
 }
 
-float FitnessFunction::evaluate(Individual const& individual) const
+float FitnessFunction::evaluate(AbstractIndividual const& individual) const
 {
     std::vector<unsigned char> const& pixels = individual.get_pixels();
     

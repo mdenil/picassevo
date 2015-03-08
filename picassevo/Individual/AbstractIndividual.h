@@ -16,14 +16,14 @@
 
 #include "Gene.h"
 
-class Individual
+class AbstractIndividual
 {
 public:
-    Individual(unsigned width, unsigned height);
-    virtual ~Individual() {}
+    AbstractIndividual(unsigned width, unsigned height);
+    virtual ~AbstractIndividual() {}
     
     virtual void mutate() = 0;
-    virtual std::unique_ptr<Individual> clone() const = 0;
+    virtual std::unique_ptr<AbstractIndividual> clone() const = 0;
     
     virtual void draw() const;
     
@@ -40,12 +40,16 @@ public:
 protected:
     std::vector<Gene> m_genes;
     unsigned m_width, m_height;
-    std::vector<unsigned char> m_pixels;
     
     GLenum m_primitive_type;
+    std::vector<unsigned char> m_pixels;
     
     GLuint m_vbo;
 };
 
+#define CLONEABLE(BASE, DERIVED) \
+virtual std::unique_ptr<BASE> clone() const { \
+    return std::make_unique<DERIVED>(*this); \
+}
 
 #endif /* defined(__picassevo__Individual__) */

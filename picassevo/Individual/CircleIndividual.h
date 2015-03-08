@@ -9,25 +9,16 @@
 #ifndef __picassevo__CircleIndividual__
 #define __picassevo__CircleIndividual__
 
-#include <vector>
+#include "AbstractLayeredIndividual.h"
 
-#include "Individual.h"
-
-class CircleIndividual : public Individual
+class CircleIndividual : public AbstractLayeredIndividual
 {
 public:
     CircleIndividual(unsigned width, unsigned height);
     
-    virtual void mutate();
-    
-    void draw() const;
-    
-    virtual std::unique_ptr<Individual> clone() const {
-        return std::make_unique<CircleIndividual>(*this);
-    }
-    
-private:
-    void generate_mutation_genes();
+    CLONEABLE(AbstractIndividual, CircleIndividual);
+protected:
+    virtual void generate_mutation_genes();
 };
 
 #endif /* defined(__picassevo__CircleIndividual__) */

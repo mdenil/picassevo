@@ -12,20 +12,20 @@
 #include <memory>
 #include <chrono>
 
-#include "Individual.h"
+#include "AbstractIndividual.h"
 #include "FitnessFunction.h"
 
 class Evolver
 {
 public:
-    Evolver(Individual const& seed, FitnessFunction* fitness);
+    Evolver(AbstractIndividual const& seed, FitnessFunction* fitness);
     
     void run();
     
-    Individual const& get_best_individual() const { return *m_best; }
+    AbstractIndividual const& get_best_individual() const { return *m_best; }
     
 private:
-    std::unique_ptr<Individual> m_best;
+    std::unique_ptr<AbstractIndividual> m_best;
     float m_best_fitness;
     
     FitnessFunction* m_fitness_function;

@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		6C450F921AA8EA2E0038784D /* lodepng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450F901AA8EA2E0038784D /* lodepng.cpp */; };
-		6C450F971AA904E50038784D /* OriginalIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450F951AA904E50038784D /* OriginalIndividual.cpp */; };
 		6C450F9D1AA908500038784D /* Gene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450F9B1AA908500038784D /* Gene.cpp */; };
 		6C450FA01AA90A900038784D /* FitnessFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450F9E1AA90A900038784D /* FitnessFunction.cpp */; };
 		6C450FA31AA916290038784D /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FA11AA916290038784D /* Random.cpp */; };
 		6C450FA61AA91BDA0038784D /* Evolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FA41AA91BDA0038784D /* Evolver.cpp */; };
-		6C450FA91AAA3FE70038784D /* Individual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FA71AAA3FE70038784D /* Individual.cpp */; };
-		6C450FAC1AAA449C0038784D /* CircleIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FAA1AAA449C0038784D /* CircleIndividual.cpp */; };
+		6C450FB31AAC9E800038784D /* CircleIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FAF1AAC9E800038784D /* CircleIndividual.cpp */; };
+		6C450FB41AAC9E800038784D /* AbstractIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FB11AAC9E800038784D /* AbstractIndividual.cpp */; };
+		6C450FB71AACA02C0038784D /* AbstractLayeredIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FB51AACA02C0038784D /* AbstractLayeredIndividual.cpp */; };
+		6C450FBA1AACA6550038784D /* RectangleIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FB81AACA6550038784D /* RectangleIndividual.cpp */; };
+		6C450FBD1AACA8690038784D /* TriangleIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FBB1AACA8690038784D /* TriangleIndividual.cpp */; };
 		6CFEF3341AA526E00067BEF2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6CFEF3331AA526E00067BEF2 /* main.cpp */; };
 		6CFEF33B1AA5277E0067BEF2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFEF33A1AA5277E0067BEF2 /* OpenGL.framework */; };
 		6CFEF33D1AA528730067BEF2 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFEF33C1AA528730067BEF2 /* GLUT.framework */; };
@@ -35,8 +37,6 @@
 /* Begin PBXFileReference section */
 		6C450F901AA8EA2E0038784D /* lodepng.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lodepng.cpp; path = lodepng/lodepng.cpp; sourceTree = "<group>"; };
 		6C450F911AA8EA2E0038784D /* lodepng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lodepng.h; path = lodepng/lodepng.h; sourceTree = "<group>"; };
-		6C450F951AA904E50038784D /* OriginalIndividual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OriginalIndividual.cpp; sourceTree = "<group>"; };
-		6C450F961AA904E50038784D /* OriginalIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriginalIndividual.h; sourceTree = "<group>"; };
 		6C450F9B1AA908500038784D /* Gene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gene.cpp; sourceTree = "<group>"; };
 		6C450F9C1AA908500038784D /* Gene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gene.h; sourceTree = "<group>"; };
 		6C450F9E1AA90A900038784D /* FitnessFunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FitnessFunction.cpp; sourceTree = "<group>"; };
@@ -45,11 +45,17 @@
 		6C450FA21AA916290038784D /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Random.h; sourceTree = "<group>"; };
 		6C450FA41AA91BDA0038784D /* Evolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Evolver.cpp; sourceTree = "<group>"; };
 		6C450FA51AA91BDA0038784D /* Evolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evolver.h; sourceTree = "<group>"; };
-		6C450FA71AAA3FE70038784D /* Individual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Individual.cpp; sourceTree = "<group>"; };
-		6C450FA81AAA3FE70038784D /* Individual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Individual.h; sourceTree = "<group>"; };
-		6C450FAA1AAA449C0038784D /* CircleIndividual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircleIndividual.cpp; sourceTree = "<group>"; };
-		6C450FAB1AAA449C0038784D /* CircleIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleIndividual.h; sourceTree = "<group>"; };
 		6C450FAD1AAB7F120038784D /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
+		6C450FAF1AAC9E800038784D /* CircleIndividual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CircleIndividual.cpp; path = Individual/CircleIndividual.cpp; sourceTree = "<group>"; };
+		6C450FB01AAC9E800038784D /* CircleIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleIndividual.h; path = Individual/CircleIndividual.h; sourceTree = "<group>"; };
+		6C450FB11AAC9E800038784D /* AbstractIndividual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AbstractIndividual.cpp; path = Individual/AbstractIndividual.cpp; sourceTree = "<group>"; };
+		6C450FB21AAC9E800038784D /* AbstractIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractIndividual.h; path = Individual/AbstractIndividual.h; sourceTree = "<group>"; };
+		6C450FB51AACA02C0038784D /* AbstractLayeredIndividual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AbstractLayeredIndividual.cpp; path = Individual/AbstractLayeredIndividual.cpp; sourceTree = "<group>"; };
+		6C450FB61AACA02C0038784D /* AbstractLayeredIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractLayeredIndividual.h; path = Individual/AbstractLayeredIndividual.h; sourceTree = "<group>"; };
+		6C450FB81AACA6550038784D /* RectangleIndividual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RectangleIndividual.cpp; path = Individual/RectangleIndividual.cpp; sourceTree = "<group>"; };
+		6C450FB91AACA6550038784D /* RectangleIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RectangleIndividual.h; path = Individual/RectangleIndividual.h; sourceTree = "<group>"; };
+		6C450FBB1AACA8690038784D /* TriangleIndividual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TriangleIndividual.cpp; path = Individual/TriangleIndividual.cpp; sourceTree = "<group>"; };
+		6C450FBC1AACA8690038784D /* TriangleIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TriangleIndividual.h; path = Individual/TriangleIndividual.h; sourceTree = "<group>"; };
 		6CFEF3301AA526E00067BEF2 /* picassevo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = picassevo; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFEF3331AA526E00067BEF2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6CFEF33A1AA5277E0067BEF2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -78,6 +84,23 @@
 			name = lodepng;
 			sourceTree = "<group>";
 		};
+		6C450FAE1AAC9DF90038784D /* Individual */ = {
+			isa = PBXGroup;
+			children = (
+				6C450FB11AAC9E800038784D /* AbstractIndividual.cpp */,
+				6C450FB21AAC9E800038784D /* AbstractIndividual.h */,
+				6C450FB51AACA02C0038784D /* AbstractLayeredIndividual.cpp */,
+				6C450FB61AACA02C0038784D /* AbstractLayeredIndividual.h */,
+				6C450FAF1AAC9E800038784D /* CircleIndividual.cpp */,
+				6C450FB01AAC9E800038784D /* CircleIndividual.h */,
+				6C450FB81AACA6550038784D /* RectangleIndividual.cpp */,
+				6C450FB91AACA6550038784D /* RectangleIndividual.h */,
+				6C450FBB1AACA8690038784D /* TriangleIndividual.cpp */,
+				6C450FBC1AACA8690038784D /* TriangleIndividual.h */,
+			);
+			name = Individual;
+			sourceTree = "<group>";
+		};
 		6CFEF3271AA526E00067BEF2 = {
 			isa = PBXGroup;
 			children = (
@@ -99,14 +122,9 @@
 		6CFEF3321AA526E00067BEF2 /* picassevo */ = {
 			isa = PBXGroup;
 			children = (
+				6C450FAE1AAC9DF90038784D /* Individual */,
 				6C450F931AA8EA340038784D /* lodepng */,
 				6CFEF3331AA526E00067BEF2 /* main.cpp */,
-				6C450FA71AAA3FE70038784D /* Individual.cpp */,
-				6C450FA81AAA3FE70038784D /* Individual.h */,
-				6C450F951AA904E50038784D /* OriginalIndividual.cpp */,
-				6C450F961AA904E50038784D /* OriginalIndividual.h */,
-				6C450FAA1AAA449C0038784D /* CircleIndividual.cpp */,
-				6C450FAB1AAA449C0038784D /* CircleIndividual.h */,
 				6C450F9B1AA908500038784D /* Gene.cpp */,
 				6C450F9C1AA908500038784D /* Gene.h */,
 				6C450F9E1AA90A900038784D /* FitnessFunction.cpp */,
@@ -176,14 +194,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C450FBD1AACA8690038784D /* TriangleIndividual.cpp in Sources */,
 				6C450F9D1AA908500038784D /* Gene.cpp in Sources */,
-				6C450F971AA904E50038784D /* OriginalIndividual.cpp in Sources */,
-				6C450FA91AAA3FE70038784D /* Individual.cpp in Sources */,
+				6C450FB31AAC9E800038784D /* CircleIndividual.cpp in Sources */,
 				6C450F921AA8EA2E0038784D /* lodepng.cpp in Sources */,
-				6C450FAC1AAA449C0038784D /* CircleIndividual.cpp in Sources */,
 				6C450FA31AA916290038784D /* Random.cpp in Sources */,
 				6C450FA01AA90A900038784D /* FitnessFunction.cpp in Sources */,
 				6CFEF3341AA526E00067BEF2 /* main.cpp in Sources */,
+				6C450FBA1AACA6550038784D /* RectangleIndividual.cpp in Sources */,
+				6C450FB41AAC9E800038784D /* AbstractIndividual.cpp in Sources */,
+				6C450FB71AACA02C0038784D /* AbstractLayeredIndividual.cpp in Sources */,
 				6C450FA61AA91BDA0038784D /* Evolver.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
