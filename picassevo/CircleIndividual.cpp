@@ -17,7 +17,7 @@
 CircleIndividual::CircleIndividual(unsigned width, unsigned height):
     Individual(width, height)
 {
-    m_primitive_type = GL_QUADS;
+    m_primitive_type = GL_TRIANGLE_FAN;
     
     m_pixels.clear();
     m_pixels.resize(get_size() * 4);
@@ -57,7 +57,7 @@ void CircleIndividual::mutate()
 
 void CircleIndividual::generate_mutation_genes()
 {
-    //*
+    /*
     // generate a new rectangle
     auto randx = std::uniform_real_distribution<float>(0, m_width);
     auto randy = std::uniform_real_distribution<float>(0, m_height);
@@ -103,7 +103,7 @@ void CircleIndividual::generate_mutation_genes()
     }
     //*/
     
-    /*
+    //*
     // generate a new circle
     auto randx = std::uniform_real_distribution<float>(0, m_width);
     auto randy = std::uniform_real_distribution<float>(0, m_height);
@@ -124,13 +124,14 @@ void CircleIndividual::generate_mutation_genes()
     
     m_genes.clear();
     m_genes.reserve(detail * 3);
-    for (int i = 0; i < detail; ++i) {
+    
+    m_genes.push_back({x, y, color});
+    for (int i = 0; i <= detail; ++i) {
         float o1 = 2*M_PI*i / detail;
-        float o2 = 2*M_PI*(i+1) / detail;
+        //float o2 = 2*M_PI*(i+1) / detail;
         
-        m_genes.push_back({x, y, color});
         m_genes.push_back({x + r * std::cosf(o1), y + r * std::sinf(o1), color});
-        m_genes.push_back({x + r * std::cosf(o2), y + r * std::sinf(o2), color});
+        //m_genes.push_back({x + r * std::cosf(o2), y + r * std::sinf(o2), color});
     }
     //*/
 }
