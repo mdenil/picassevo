@@ -12,3 +12,5 @@ Infrastructure:
 - Render into textures
 - separate texture ownership from individuals
 - double buffer textures between incumbant and challenger
+- command line only option
+- wtf is going on with the frame rate?
