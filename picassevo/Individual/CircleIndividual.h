@@ -14,7 +14,7 @@
 class CircleIndividual : public AbstractLayeredIndividual
 {
 public:
-    CircleIndividual(unsigned width, unsigned height);
+    CircleIndividual(unsigned width, unsigned height, std::string const& bg_color);
     
     CLONEABLE(AbstractIndividual, CircleIndividual);
 protected:

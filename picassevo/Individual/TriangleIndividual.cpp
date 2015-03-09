@@ -13,8 +13,8 @@
 #include "TriangleIndividual.h"
 #include "Random.h"
 
-TriangleIndividual::TriangleIndividual(unsigned width, unsigned height):
-AbstractLayeredIndividual(width, height)
+TriangleIndividual::TriangleIndividual(unsigned width, unsigned height, std::string const& bg_color):
+AbstractLayeredIndividual(width, height, bg_color)
 {
     m_primitive_type = GL_TRIANGLES;
 }

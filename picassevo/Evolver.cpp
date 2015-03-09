@@ -25,7 +25,7 @@ Evolver::Evolver(AbstractIndividual const& seed, FitnessFunction* fitness):
 }
 
 
-void Evolver::run()
+void Evolver::run(bool verbose)
 {
     auto candidate = m_best->clone();
     candidate->mutate();
@@ -46,22 +46,15 @@ void Evolver::run()
         
         m_n_success += 1;
         
-        /*
-        std::cout
-            << "C: " << m_best_fitness << " "
-            << "FPS: " << fps << " "
-            << "R: " << m_rejection_count << " "
-            << "S: " << m_n_success << " "
-            << "T: " << m_n_generations
-            << std::endl;
-         */
-        std::printf("C: %1.5e FPS: %6.2f R: %3i S: %6i T: %6i\n",
-                    m_best_fitness,
-                    fps,
-                    m_rejection_count,
-                    m_n_success,
-                    m_n_generations);
-        
+        if (verbose) {
+            std::printf("C: %1.5e FPS: %6.2f R: %3i S: %6i T: %6i\n",
+                        m_best_fitness,
+                        fps,
+                        m_rejection_count,
+                        m_n_success,
+                        m_n_generations);
+        }
+    
         m_step_count = 0;
         m_rejection_count = 0;
     }

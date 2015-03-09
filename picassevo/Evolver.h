@@ -20,9 +20,11 @@ class Evolver
 public:
     Evolver(AbstractIndividual const& seed, FitnessFunction* fitness);
     
-    void run();
+    void run(bool verbose);
     
     AbstractIndividual const& get_best_individual() const { return *m_best; }
+    
+    int get_num_successes() const { return m_n_success; }
     
 private:
     std::unique_ptr<AbstractIndividual> m_best;

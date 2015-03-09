@@ -8,20 +8,24 @@
 
 #include "AbstractIndividual.h"
 
-AbstractIndividual::AbstractIndividual(unsigned width, unsigned height):
+AbstractIndividual::AbstractIndividual(unsigned width, unsigned height, std::string const& bg_color):
     m_width(width),
     m_height(height),
     m_primitive_type(GL_TRIANGLES)
 {
     glGenBuffers(1, &m_vbo);
     
+    bool white = bg_color == "white";
+    
     m_pixels.resize(get_size() * 4);
     for (int i = 0; i < m_pixels.size(); ++i) {
-        // black with full alpha
-        //m_pixels[i] = i % 4 != 3 ? 0 : 255;
-        
-        // white
-        m_pixels[i] = 255;
+        if (white) {
+            m_pixels[i] = 255;
+        }
+        else {
+            // black with full alpha
+            m_pixels[i] = i % 4 != 3 ? 0 : 255;
+        }
     }
 }
 

@@ -14,7 +14,7 @@
 class TriangleIndividual : public AbstractLayeredIndividual
 {
 public:
-    TriangleIndividual(unsigned width, unsigned height);
+    TriangleIndividual(unsigned width, unsigned height, std::string const& bg_color);
     
     CLONEABLE(AbstractIndividual, TriangleIndividual);
 protected:

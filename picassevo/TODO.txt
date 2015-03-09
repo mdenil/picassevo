@@ -1,13 +1,4 @@
-Configurable options:
-
-- shape type (circle/triangle/rectangle/etc)
-    - some parameters of the shapes (?)
-- background color
-- image file
-- save path / frequency
-- target number of shapes
-
-Infrastructure:
+Infrastructure enhancements:
 
 - Render into textures
 - separate texture ownership from individuals

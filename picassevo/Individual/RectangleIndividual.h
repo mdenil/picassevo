@@ -14,7 +14,7 @@
 class RectangleIndividual : public AbstractLayeredIndividual
 {
 public:
-    RectangleIndividual(unsigned width, unsigned height);
+    RectangleIndividual(unsigned width, unsigned height, std::string const& bg_color);
     
     CLONEABLE(AbstractIndividual, RectangleIndividual);
 protected:

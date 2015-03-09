@@ -13,13 +13,14 @@
 
 #include <memory>
 #include <vector>
+#include <string>
 
 #include "Gene.h"
 
 class AbstractIndividual
 {
 public:
-    AbstractIndividual(unsigned width, unsigned height);
+    AbstractIndividual(unsigned width, unsigned height, std::string const& bg_color);
     virtual ~AbstractIndividual() {}
     
     virtual void mutate() = 0;

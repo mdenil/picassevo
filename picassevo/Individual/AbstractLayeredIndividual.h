@@ -14,8 +14,8 @@
 class AbstractLayeredIndividual : public AbstractIndividual
 {
 public:
-    AbstractLayeredIndividual(unsigned width, unsigned height):
-        AbstractIndividual(width, height)
+    AbstractLayeredIndividual(unsigned width, unsigned height, std::string const& bg_color):
+        AbstractIndividual(width, height, bg_color)
     {}
     
     virtual void mutate();

@@ -13,8 +13,8 @@
 #include "RectangleIndividual.h"
 #include "Random.h"
 
-RectangleIndividual::RectangleIndividual(unsigned width, unsigned height):
-    AbstractLayeredIndividual(width, height)
+RectangleIndividual::RectangleIndividual(unsigned width, unsigned height, std::string const& bg_color):
+    AbstractLayeredIndividual(width, height, bg_color)
 {
     m_primitive_type = GL_QUADS;
 }
