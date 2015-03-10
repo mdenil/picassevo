@@ -17,6 +17,7 @@
 		6C450FB71AACA02C0038784D /* AbstractLayeredIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FB51AACA02C0038784D /* AbstractLayeredIndividual.cpp */; };
 		6C450FBA1AACA6550038784D /* RectangleIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FB81AACA6550038784D /* RectangleIndividual.cpp */; };
 		6C450FBD1AACA8690038784D /* TriangleIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FBB1AACA8690038784D /* TriangleIndividual.cpp */; };
+		6C450FC21AAE64280038784D /* SquareIndividual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C450FC01AAE64280038784D /* SquareIndividual.cpp */; };
 		6CFEF3341AA526E00067BEF2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6CFEF3331AA526E00067BEF2 /* main.cpp */; };
 		6CFEF33B1AA5277E0067BEF2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFEF33A1AA5277E0067BEF2 /* OpenGL.framework */; };
 		6CFEF33D1AA528730067BEF2 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFEF33C1AA528730067BEF2 /* GLUT.framework */; };
@@ -56,6 +57,8 @@
 		6C450FB91AACA6550038784D /* RectangleIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RectangleIndividual.h; path = Individual/RectangleIndividual.h; sourceTree = "<group>"; };
 		6C450FBB1AACA8690038784D /* TriangleIndividual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TriangleIndividual.cpp; path = Individual/TriangleIndividual.cpp; sourceTree = "<group>"; };
 		6C450FBC1AACA8690038784D /* TriangleIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TriangleIndividual.h; path = Individual/TriangleIndividual.h; sourceTree = "<group>"; };
+		6C450FC01AAE64280038784D /* SquareIndividual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SquareIndividual.cpp; path = Individual/SquareIndividual.cpp; sourceTree = "<group>"; };
+		6C450FC11AAE64280038784D /* SquareIndividual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquareIndividual.h; path = Individual/SquareIndividual.h; sourceTree = "<group>"; };
 		6CFEF3301AA526E00067BEF2 /* picassevo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = picassevo; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFEF3331AA526E00067BEF2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6CFEF33A1AA5277E0067BEF2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -97,6 +100,8 @@
 				6C450FB91AACA6550038784D /* RectangleIndividual.h */,
 				6C450FBB1AACA8690038784D /* TriangleIndividual.cpp */,
 				6C450FBC1AACA8690038784D /* TriangleIndividual.h */,
+				6C450FC01AAE64280038784D /* SquareIndividual.cpp */,
+				6C450FC11AAE64280038784D /* SquareIndividual.h */,
 			);
 			name = Individual;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				6C450FB41AAC9E800038784D /* AbstractIndividual.cpp in Sources */,
 				6C450FB71AACA02C0038784D /* AbstractLayeredIndividual.cpp in Sources */,
 				6C450FA61AA91BDA0038784D /* Evolver.cpp in Sources */,
+				6C450FC21AAE64280038784D /* SquareIndividual.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

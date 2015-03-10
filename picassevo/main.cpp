@@ -19,6 +19,7 @@
 
 #include "Individual/CircleIndividual.h"
 #include "Individual/RectangleIndividual.h"
+#include "Individual/SquareIndividual.h"
 #include "Individual/TriangleIndividual.h"
 #include "FitnessFunction.h"
 #include "Evolver.h"
@@ -177,6 +178,11 @@ int main(int argc, char** argv)
         individual = std::make_unique<TriangleIndividual>(fitness_function.get_width(),
                                                           fitness_function.get_height(),
                                                           bg_color);
+    }
+    else if (shape == "square") {
+        individual = std::make_unique<SquareIndividual>(fitness_function.get_width(),
+                                                        fitness_function.get_height(),
+                                                        bg_color);
     }
     else {
         std::cerr << "This is not a shape I recognize: '" << shape << "'" << std::endl;
